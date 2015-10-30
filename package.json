@@ -3,15 +3,18 @@
   "name": "jsonschema",
   "version": "1.0.2",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "contributors": [
-    { "name" : "Austin Wright" }
+    {
+      "name": "Austin Wright"
+    }
   ],
-  "main": "./lib",
+  "main": "./dist/lib",
   "devDependencies": {
-    "mocha": "~1.8.2",
-    "chai": "~1.5.0"
+    "babel-cli": "~6.0.12",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.0.12",
+    "chai": "~1.5.0",
+    "mocha": "~1.8.2"
   },
   "optionalDependencies": {},
   "engines": {
@@ -30,6 +33,12 @@
   },
   "description": "A fast and easy to use JSON Schema validator",
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R spec"
+    "test": "./node_modules/.bin/mocha -R spec",
+    "compile": "./node_modules/.bin/babel --optional runtime lib --out-dir dist",
+    "prepublish": "npm run compile",
+    "pretest": "npm run compile"
+  },
+  "babel": {
+    "plugins": ["transform-es2015-modules-commonjs"]
   }
 }

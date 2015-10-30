@@ -3,7 +3,7 @@
 /*jsl predef:define*/
 /*jsl predef:it*/
 
-var Validator = require('../lib/validator');
+var Validator = require('../dist/validator');
 var should = require('chai').should();
 
 var dataSchema =           require('./fixtures/data_schema.json');

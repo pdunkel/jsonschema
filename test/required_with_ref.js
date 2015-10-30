@@ -3,10 +3,10 @@
 /*jsl predef:define*/
 /*jsl predef:it*/
 
-var util = require('util')
-var fs = require('fs')
-var assert = require('chai').assert
-var Validator = require('../lib/validator')
+var util = require('util');
+var fs = require('fs');
+var assert = require('chai').assert;
+var Validator = require('../dist/validator');
 
 /**
 * sort of functional test for "extends" and "required"
